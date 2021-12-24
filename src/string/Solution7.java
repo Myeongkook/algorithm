@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Solution7 {
     public static String run(){
         Scanner sc = new Scanner(System.in);
-        String sentence = sc.nextLine().toLowerCase();
-        char[] chars = sentence.toCharArray();
+        String word = sc.nextLine().toLowerCase();
+        char[] chars = word.toCharArray();
         for(int i=0;i<chars.length/2;i++){
             if(chars[i]!=chars[chars.length-1-i]){
                 return "NO";

@@ -11,7 +11,7 @@ public class Solution8 {
         for (char a : chars) {
             if(Character.isAlphabetic(a))sb.append(a);
         }
-        String noSpecialCharacters = sb.toString().toLowerCase();
+        String noSpecialCharacters = sb.toString();
         char[] toCharArray = noSpecialCharacters.toCharArray();
         for(int i=0;i<toCharArray.length/2;i++){
             if(toCharArray[i]!=toCharArray[toCharArray.length-1-i]){

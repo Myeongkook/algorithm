@@ -1,5 +1,4 @@
 package string;
-
 import java.util.Scanner;
 
 /*
@@ -14,24 +13,29 @@ public class Solution11 {
         Scanner sc = new Scanner(System.in);
         String request = sc.nextLine().toUpperCase();
         char[] chars = request.toCharArray();
+        int counter = 1;
         StringBuilder answer = new StringBuilder();
-        for(int i=0;i<chars.length;i++){
-            int counter = 1;
-            for(int j=i+1;j<chars.length-1;j++){
-                if(chars[i]!=chars[j]){
-                    break;
+        for(int i=0; i< chars.length; i++){
+            if(i+1!=chars.length){
+                if(chars[i]==chars[i+1]){
+                    counter+=1;
                 }else {
-                    counter++;
+                    answer.append((chars[i]));
+                    if(counter>1){
+                        answer.append((counter));
+                        counter = 1;
+                    }
+                }
+            }else{
+                answer.append((chars[i]));
+                if(counter>1){
+                    answer.append((counter));
                 }
             }
-            if(counter>1){
-                System.out.println(counter);
-            }
-
         }
-        return "";
+        return String.join(", ", answer.toString());
     }
     public static void main(String[]args){
-        Solution11.run();
+        System.out.println(Solution11.run());
     }
 }
